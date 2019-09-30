@@ -1,0 +1,12 @@
+alias vv='vim -u ~/.vimrc_henry'
+alias tt='tmux -f ~/.tmux_henry.conf'
+
+
+alias vv='vim -u ~/.vimrc_henry'
+alias tt='tmux -f ~/.tmux_henry.conf'
+
+
+alias vv='vim -u ~/.vimrc_henry'
+alias tt='tmux -f ~/.tmux_henry.conf'
+
+
