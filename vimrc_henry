@@ -1,5 +1,3 @@
-"LOADING GLOBAL SETTINGS FOR VIM
-source /etc/vimrc
 "NO vi SIMULATION
 set nocompatible
 
@@ -55,7 +53,17 @@ let g:ycm_global_ycm_extra_conf = '/home/hwu16/.conf/.vim/bundle/YouCompleteMe/.
 "set laststatus=2
 set splitbelow
 set splitright
+
 :syntax enable
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+"Config NERDTree
+"start NerdTree if vim opens w/o a file
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"NerdTree Toggle
+map <C-n> :NERDTreeToggle<CR>
+"Close vim when NerdTree is only left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
