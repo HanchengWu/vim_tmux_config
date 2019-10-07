@@ -30,6 +30,7 @@ colorscheme gruvbox
 let g:gruvbox_contrast_dark  = 'soft'
 "let g:gruvbox_contrast_light = 'soft'
 let g:airline_theme='hybrid'
+"let g:airline_theme='gruvbox'
 
 "MOUSE
 set mouse=a
@@ -59,11 +60,11 @@ set splitright
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 "Config NERDTree
-"start NerdTree if vim opens w/o a file
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"Start NerdTree if vim opens w/o a file
+  "autocmd StdinReadPre * let s:std_in=1
+  "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "NerdTree Toggle
-map <C-n> :NERDTreeToggle<CR>
+  map <C-n> :NERDTreeToggle<CR>
 "Close vim when NerdTree is only left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
