@@ -59,6 +59,8 @@ set splitright
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+set backspace=indent,eol,start
+
 "Config NERDTree
 "Start NerdTree if vim opens w/o a file
   "autocmd StdinReadPre * let s:std_in=1
