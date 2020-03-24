@@ -5,21 +5,17 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
-"Plugin 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-
 call vundle#end()
 filetype plugin indent on
 
@@ -27,10 +23,6 @@ filetype plugin indent on
 set term=screen-256color
 set background=dark
 colorscheme gruvbox
-let g:gruvbox_contrast_dark  = 'soft'
-"let g:gruvbox_contrast_light = 'soft'
-let g:airline_theme='hybrid'
-"let g:airline_theme='gruvbox'
 
 "MOUSE
 set mouse=a
@@ -49,9 +41,14 @@ set expandtab
 "SIZE OF INDENT
 set shiftwidth=2
 
-let g:ycm_global_ycm_extra_conf = '/home/hwu16/.conf/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
-"set laststatus=2
+"Enable powerline
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+set laststatus=2
+
 set splitbelow
 set splitright
 
@@ -59,14 +56,10 @@ set splitright
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-set backspace=indent,eol,start
-
 "Config NERDTree
-"Start NerdTree if vim opens w/o a file
-  "autocmd StdinReadPre * let s:std_in=1
-  "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "NerdTree Toggle
-  map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 "Close vim when NerdTree is only left
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
