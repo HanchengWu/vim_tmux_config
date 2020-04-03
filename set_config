@@ -2,7 +2,7 @@ echo "alias vv='vim'"   >>  ~/.myshell.conf
 echo "alias tt='tmux'"  >>  ~/.myshell.conf
 cat  ~/.myshell.conf  >>  ~/.bashrc
 
-cp ./vimrc        ~/.vimrc
-cp ./tmux.conf    ~/.tmux.conf
+cp ./.vimrc        ~/.vimrc
+cp ./.tmux.conf    ~/.tmux.conf
 
 

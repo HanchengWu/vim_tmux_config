@@ -13,7 +13,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
-"Plugin 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 call vundle#end()
@@ -27,8 +27,12 @@ colorscheme gruvbox
 "MOUSE
 set mouse=a
 
-"HIGHLIGHT SEARCH
+set number
+
+"SEARCH OPTIONS
 set hlsearch
+set incsearch
+set ignorecase
 
 "CURSORLINE
 set cursorline
@@ -38,8 +42,12 @@ set tabstop=2
 set softtabstop=2
 set expandtab
 
+"Allow switch buffers w/o save
+set hidden
+
 "SIZE OF INDENT
 set shiftwidth=2
+set backspace=indent,eol,start
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
